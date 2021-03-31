@@ -1,0 +1,310 @@
+<!-- Lab 1,2,3,4 teraz :5 -->
+<!--modyfikacja styli CSS o całe ciało z containerem łącznie. Zmiana koloru i dodanie sekcji do czcionki oraz jej koloru oraz rodziny  ------------ CSS-->
+
+<!--html utworzenie ciala, do dzialania w odnosniku style CSS oraz odanie informacji odnośnie projektu - tematyczne działanie na strone + działania mające na celu scalenie obrzków o skale 1920x1080 / 1080p.-->
+
+<!--terści zadań :
+
+1. Dodaj do odnośników w menu class=”btn btn-primary”.
+index.html
+<a href=”xxx” class=”btn btn-primary” title=”xxx”>
+<span class=”glyphicon glyphicon-xxx”></span> link </a>
+2. W pliku style.css zmień wygląd menu w taki sposób, żeby przyciski dobrze
+wyglądały – usuń ramki, zmień kolor tła i odstępy.
+3. Dodaj obrazek zamiast napisu Logo:
+index.html
+<a class="navbar-brand" href="#">
+<img src=”logo.jpg” alt=”logo”>
+</a> i korzystając z selektora .navbar-brand img ustaw mu wysokość i
+szerokość.
+4. Podobnie sformatuj obrazki w pokazie slajdów .carousel.
+5. Sformatuj pozostałe podstrony i elementy według własnych gustów.
+6. Uzupełnij stronę o pozostałe elementy, które chcesz na niej umieścić. 
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<!-- tutyul oraz odnosnik do styli.css tytul karty itd. -->
+<head>
+  <title>Patryk Pieczarka - OS/ALL</title>
+  <meta charset="utf-8">
+  <link href="style.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="form.js"></script>
+  <link href="style.css" rel="stylesheet">
+</head>
+<body>
+<!-- nawigacja strony WWW --> 
+<!-- strona - do ciała / odnisienie -->
+<body id="cialo">
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" ariaexpanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+          </button>
+        <a class="navbar-brand" href="#">
+          <div id="logo">
+            <img src="logo.png" alt="logo - obrazek">
+          </div>
+        </a>
+      </div>
+   <!-- przyciski do menu oraz odnosniki do danej sekcji poprzez oznaczenie  -->
+    <div class="collapse navbar-collapse" id="navbar-collapse-1">
+      <ul class="nav navbar-nav text-right">
+        <li class="active"><a href="#main-page">Strona główna</a></li>
+        <li><a href="#page1">Wiadomości</a></li>
+        <li><a href="#">Galeria</a></li>
+        <li><a href="#">Kontakt</a></li>
+        <li><a href="#">Sklep</a></li>
+        
+        <!-- odniesienie do sekcji, wejscie poprzez link sekcji  -->
+        <li><a href="#page2">Formularz zgłoszeniowy</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Konto Premium</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- opakowanie - cała strona odnosnik do style . css -->
+<header>
+  <div class="container">
+    <div id="carouselID" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselID" data-slide-to="0"class="active"></li>
+          <li data-target="#carouselID" data-slide-to="1"></li>
+          <li data-target="#carouselID" data-slide-to="2"></li>
+          <li data-target="#carouselID" data-slide-to="3"></li>
+          <li data-target="#carouselID" data-slide-to="4"></li>
+        </ol>
+
+<!--  obrazki oraz tytuly - odnosnik do diva  -->
+
+        <div class="carousel-inner" role="listbox">
+          <div class="item active">
+            <img src="1a.jpg" alt="Windows10">
+            <div class="carousel-caption">Windows10/ Home x64</div>
+          </div>
+          <div class="item">
+            <img src="2a.jpg" alt="Windows8">
+            <div class="carousel-caption">Windows8/ PRO x64</div>
+          </div>
+          <div class="item">
+            <img src="3a.jpg" alt="Windows7">
+            <div class="carousel-caption">Windows7/ Home x64</div>
+          </div>
+          <div class="item">
+            <img src="5a.png" alt="Ububtu/UNIX 20.1.2. LTS">
+            <div class="carousel-caption">Ububtu/UNIX 20.1.2. LTS</div>
+          </div>
+          <div class="item">
+            <img src="4a.png" alt="MacOS">
+            <div class="carousel-caption">MacOS/ Sierra</div>
+          </div>
+        </div>
+          <!-- przycisk do przelaczania obrazkow  -->
+
+        <a class="left carousel-control" href="#carouselID" role="button" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left" ariahidden="true"></span>
+          <span class="sr-only">Poprzedni</span>
+        </a>
+
+        <a class="right carousel-control" href="#carouselID" role="button" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right" ariahidden="true"></span>
+          <span class="sr-only">Następny</span>
+        </a> 
+    </div> 
+  </div>
+</header>
+ <!-- 1sekcja do strony glownej  -->
+ <section id="main-page" class="jumbotron alert alert-danger" role="alert">
+  <div class="container">
+    <h1 id="nagl"><span class="glyphicon glyphicon-home" aria-hidden="true" id="ikonaduza"></span> STRONA GŁÓWNA</h1>
+    <p style="color:#ffffff; ">
+      
+      <p>
+        Tematem przewodnim tejże strony internetowej jest rodzina systemów, które obsługują wysoko wysublimowane systemy informatyczne w wielkich korporacjach.
+        Wiele informacji, które to Państwo uzyskają z tej witryny pochodzi z bazy wiedzy nie tylko założycieli fora, ale również podstawowych wieści i nowinek technicznych,
+        z zakresu szerokopojętego systemu informatycznego.
+      </p>
+    </div>
+</section>
+  
+<!-- levy div main menu -->
+<div class="container text-center">    
+  <div class="row content">
+    <div class="col-sm-2 sidenav">
+      <p><a href="https://pl.wikipedia.org/wiki/Windows_10">Windows10</a></p>
+      <p><a href="https://pl.wikipedia.org/wiki/Windows_8">Windows8</a></p>
+      <p><a href="https://pl.wikipedia.org/wiki/Windows_7">Windows7</a></p>
+      <p><a href="https://pl.wikipedia.org/wiki/Ubuntu">UNIX/Ubuntu LTS</a></p>
+      <p><a href="https://pl.wikipedia.org/wiki/MacOS_Sierra">MacOS/Sierra</a></p>
+      <p><a href="https://pl.wikipedia.org/wiki/Microsoft">Microsoft - synteza</a></p>
+      <p><a href="https://pl.wikipedia.org/wiki/System_uniksopodobny">UNIX - synteza</a></p>
+      <p><a href="https://pl.wikipedia.org/wiki/MacOS">MacOS - synteza</a></p>
+    </div>
+    <!-- centre div main menu (tabela - zadanie 1 lab) -->
+    <div class="col-sm-8 text-left"> 
+      <h1 class="text-danger">Cześć, oto nasi moderatorzy 
+        !:)</h1>
+      <table class="table">
+            <tr>
+                <td rowspan="2">L.p.</td>
+                <td colspan="2">Osoba</td>
+                <td rowspan="2">Tytuł naukowy</td>
+            </tr>
+            <tr>
+                <td>Imie</td>
+                <td>Nazwisko</td>
+            </tr>
+            <tr>
+                <td>1.</td>
+                <td>Patryk</td>
+                <td>Pieczarka</td>
+                <td>inż.</td>
+            </tr>
+            <tr> 
+                <td>2.</td>
+                <td>Marcin</td>
+                <td>Marenquoes</td>
+                <td>dr inż.</td>
+            </tr>
+            <tr>
+                <td>3.</td>
+                <td>Robert</td>
+                <td>Leszczyński</td>
+                <td>mgr inż.</td>
+            </tr>
+            <tr>
+                <td>4.</td>
+                <td>Marcin</td>
+                <td>Pakulski</td>
+                <td>prof. (PG)</td>
+            </tr>
+        </table>
+    </div>
+    <div class="col-sm-2 sidenav">
+      <div class="well">
+        <p>Facebook</p>
+      </div>
+      <div class="well">
+        <p>Instagram</p>
+      </div>
+      <div class="well">
+        <p>Discord</p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- sekcja wiadomosci -->
+<section id="page1">
+  <div class="container">
+    <h1 class="text-danger" id="nagl"><span class="glyphicon glyphicon-globe" aria-hidden="true" id="ikonaduza"> </span>WIADOMOŚCI</h1>
+    <p>
+      Systemy operacyjne to podstawowe oprogramowanie pozwalające zarządzać pracą komputera lub serwera. 
+      W zależności od zakresu wykorzystania poszczególnych funkcji, a także miejsca, 
+      w którym korzystamy z komputera powinniśmy wybrać odpowiednią wersję systemu oraz typ licencjonowania.
+      oprogramowanie zarządzające systemem komputerowym, tworzące środowisko do uruchamiania i kontroli zadań. 
+      W celu uruchamiania i kontroli zadań użytkownika system operacyjny zajmuje się: planowaniem oraz przydziałem czasu procesora poszczególnym zadaniom,;
+      kontrolą i przydziałem pamięci operacyjnej dla uruchomionych zadań,
+    </p>    
+  </div>
+</section>
+
+<div class="container">
+<div class="row">
+  <div class="col-sm-4 text-center">
+    <img src="1.jpg" class="img-circle center-block img-responsie" alt="Kwadrat" height=200 width=200>
+    <h3 class="text-success" >Microsoft</h3>
+  </div>
+  <div class="col-sm-4 text-center">
+    <img src="2.jpg" class="img-circle center-block img-responsie" alt="Kwadrat" height=200 width=200>
+    <h3 class="text-info">Linux</h3>
+  </div>
+  <div class="col-sm-4 text-center">
+    <img src="3.jpg" class="img-circle center-block img-responsie" alt="Kwadrat" height=200 width=200>
+    <h3 class="text-danger">MacOS</h3>
+  </div>
+</div> 
+</div>
+
+ <!-- laboratorium 4 skrypt oraz formularz zgłoszeniowy na strone ww JS -->
+ <section id="page2">
+  <div class="container">
+    <h1 class="text-danger" id="nagl"><span class="glyphicon glyphicon-pencil" aria-hidden="true" id="ikonaduza"></span> FORMULARZ KONTAKTOWY</h1>
+    <form action="index.html#kontakt" method="post" onsubmit="return checkForm();" >
+      <fieldset>
+        <legend>Proszę podać swoje dane osobowe,</legend>
+        <div class="form-group" id="name">
+          <p id="errorName" class="hide">Podanie imienia jest wymagane!</p> 
+          <label for="contactName">Imię</label>
+          <input type="text" class="form-control" id="contactName" placeholder="Podaj imię"/>
+        </div>
+        
+        <div class="form-group" id="sur">
+          <p id="errorSur" class="hide">Podanie nazwiska jest wymagane!</p> 
+          <label for="contactSur">Nazwisko</label>
+          <input type="text" class="form-control" id="contactSur" placeholder="Podaj nazwisko"/>
+        </div>
+         
+        <div class="form-group" id="mail">
+          <p id="errorEmail" class="hide">Podanie emaila jest wymagane!</p> 
+          <label for="contactEmail">Email</label>
+          <input type="text" class="form-control" id="contactEmail" placeholder="Podaj email"/>
+        </div>
+
+        <div class="form-group" id="info"> 
+          <p id="errorInfo" class="hide" >Podanie informacji jest wymagane!</p> 
+          <label for="contactInfo">Informacje</label>
+          <textarea class="form-control rounded-0" id="contactInfo" rows="6" placeholder="Podaj informacje"></textarea>
+        </div>
+
+        <input type="submit" class="btn btn-danger" value="Wyślij"/>
+      </fieldset>
+    </form>     
+  </div>
+</section>
+
+
+
+<!-- stopka -->
+<footer class="container text-center">
+    <div class="container">
+      <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">
+         Polityka prywatności
+      </button> 
+    </div> 
+</footer>
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" arialabel="Close"><span ariahidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">POLITYKA PRYWATNOŚCI</h4>
+      </div>
+      <!-- polityka prywatonsci + przepis -->
+      <div class="modal-body">
+        „Wszelkie informacje na temat osoby przechowywane przez agencję, w tym (1) wszelkie informacje, które można wykorzystać do odróżnienia lub śledzenia tożsamości osoby, takie jak imię i nazwisko, numer ubezpieczenia społecznego, data i miejsce urodzenia, panieńskie nazwisko matki lub zapis biometryczny; oraz (2) wszelkie inne informacje, które są powiązane lub mogłyby być powiązane z daną osobą, takie jak informacje medyczne, edukacyjne, finansowe i dotyczące zatrudnienia”.
+
+        „Dane nieprywatne” definiuje się jako:
+        
+        „Informacje, które mogą korespondować z konkretną osobą, kontem lub profilem, ale nie są wystarczające do zidentyfikowania, skontaktowania się lub zlokalizowania osoby, której te informacje dotyczą”.
+      </div> 
+      <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div> 
+    </div>
+  </div>
+</div> 
+
+</body>
+</html>
